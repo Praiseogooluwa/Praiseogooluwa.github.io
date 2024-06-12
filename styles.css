@@ -2,7 +2,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 130vh;
+    height: 70vh;
     background-color: rgb(26, 181, 6);
 }
 
@@ -18,7 +18,7 @@ body {
 }
 
 .header_text {
-    font-family: 'Nunito';
+    font-family: 'Time NEw Roman';
     font-size: 35px;
     font-weight: bold;
     color: rgb(255, 255, 255);
