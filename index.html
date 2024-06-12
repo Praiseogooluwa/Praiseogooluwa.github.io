@@ -1,35 +1,405 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <link rel="stylesheet" href="./styles.css">
-        
-    </head> 
-    <body>
-        <div class="container">
-            <div >
-                <h1 class = "header_text">WILL YOU BE MY GIRLFRIEND OREOLUWA?</h1>
-                <h1 class = "header_text">DO YOU ACCEPT?</h1>
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  html,
+  body {
+    height: 100%;
+  }
+  
+  body {
+    width: 100%;
+    background-color: #000;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @media (max-height: 500px) {
+    body {
+      margin: 25% 0 25% 0;
+    }
+  }
+  
+  .envelop {
+    width: 15rem;
+    height: 10rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  @media (min-width: 400px) and (max-width: 600px) {
+    .envelop {
+      width: 20rem;
+      height: 15rem;
+    }
+  }
+  @media (min-width: 600px) {
+    .envelop {
+      width: 25rem;
+      height: 20rem;
+    }
+  }
+  @media (min-width: 600px) and (min-height: 600px) {
+    .envelop {
+      bottom: 20%;
+    }
+  }
+  .envelop__front-paper {
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    border-radius: 0.7rem;
+    border: 0.35rem solid #967b5c;
+    background-color: #ba9872;
+    clip-path: polygon(100% 0%, 50% 70%, 0% 0%, 0% 100%, 100% 100%);
+    z-index: 300;
+  }
+  .envelop__back-paper {
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    border-radius: 0.7rem;
+    background-color: #967b5c;
+    clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 0% 90%);
+    z-index: 100;
+  }
+  .envelop__up-paper {
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    position: relative;
+    border-radius: 0.7rem;
+    background-color: #967b5c;
+    z-index: 400;
+    clip-path: polygon(0% 0%, 100% 0%, 50% 81%);
+  }
+  .envelop__sticker {
+    width: 100%;
+    height: 20%;
+    position: absolute;
+    margin: auto;
+    top: 30%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 400;
+    background-image: url("https://www.freepnglogos.com/uploads/heart-png/emoji-heart-33.png");
+    background-color: #f9f9f9;
+    border: 0.3rem solid #e2e2e2;
+    background-size: 2rem;
+    background-position: center;
+  }
+  @media (max-width: 400px) {
+    .envelop__sticker {
+      background-size: 1.2rem;
+    }
+  }
+  @media (min-width: 600px) {
+    .envelop__sticker {
+      height: 15%;
+    }
+  }
+  .envelop__false-sticker {
+    width: 20%;
+    height: 20%;
+    position: absolute;
+    margin: auto;
+    top: 30%;
+    left: 80%;
+    bottom: 0;
+    right: 0;
+    z-index: 300;
+    background-image: url("https://www.freepnglogos.com/uploads/heart-png/emoji-heart-33.png");
+    background-color: #f9f9f9;
+    border: 0.3rem solid #e2e2e2;
+    background-size: 2rem;
+    background-position: center;
+  }
+  @media (max-width: 400px) {
+    .envelop__false-sticker {
+      background-size: 1.2rem;
+    }
+  }
+  @media (min-width: 600px) {
+    .envelop__false-sticker {
+      height: 15%;
+    }
+  }
+  .envelop__content {
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    z-index: 200;
+  }
+  
+  .love-notes {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .note {
+    width: 95%;
+    height: 30%;
+    background-color: #f9f9f9;
+    position: absolute;
+    overflow: hidden;
+    transition: height 0.5s, opacity 0.25s;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  }
+  .note:nth-child(1) {
+    bottom: 60%;
+  }
+  .note:nth-child(2) {
+    bottom: 40%;
+  }
+  .note:nth-child(3) {
+    bottom: 20%;
+  }
+  .note:hover {
+    cursor: pointer;
+    height: 45%;
+  }
+  .note__text {
+    font-family: "Sofia";
+    padding: 1rem;
+  }
+  .note__text p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  @media (min-width: 300px) and (max-width: 600px) {
+    .note__text p {
+      font-size: 1.025rem;
+    }
+  }
+  @media (min-width: 600px) {
+    .note__text p {
+      font-size: 1.15rem;
+    }
+  }
+  
+  .scissors {
+    cursor: url("https://i.postimg.cc/GtLCdKxR/sisors.png"), pointer;
+  }
+  .scissors:active {
+    cursor: url("https://i.postimg.cc/GtXQ7WPZ/pngwing-com.png"), pointer;
+  }
+  
+  .cursor {
+    cursor: pointer;
+  }
+  </style>
+  
+    
+    
+    
+  </head>
+  
+  <body translate="no">
+    <html>
+  
+  <body class="scissors">
+    <div class="envelop">
+      <div class="envelop__front-paper"></div>
+      <div class="envelop__back-paper"></div>
+      <div class="envelop__up-paper js-up-paper"></div>
+      <div class="envelop__sticker js-sticker"></div>
+      <div class="envelop__false-sticker"></div>
+      <div class="envelop__content js-envelop-content">
+        <div class="love-notes">
+          <div class="note js-note">
+            <div class="note__text">
+              <p>
+                Oi amor, queria te agradecer por todos nossos momentos...
+              </p>
             </div>
-            <div class="gif_container">
-                <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDdtZ2JiZDR0a3lvMWF4OG8yc3p6Ymdvd3g2d245amdveDhyYmx6eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cLS1cfxvGOPVpf9g3y/giphy.gif" alt="Cute animated illustration">
+          </div>
+          <div class="note js-note">
+            <div class="note__text">
+              <p>quero que eles nunca acabem e que tenham sempre muitos outros pela frente.</p>
             </div>
-            <div class = "buttons">
-                <button class="btn" id = "yesButton" onclick="nextPage()">Yes</button>
-                <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">No</button>
-                <script>
-                    function nextPage() {
-                        window.location.href = "yes.html";
-                    }
-                    
-                    function moveButton() {
-                        var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth) - 85;
-                        var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight) - 48;
-                        document.getElementById('noButton').style.left = `${x}px`;
-                        document.getElementById('noButton').style.top = `${y}px`;
-                    }
-                </script> 
+          </div>
+          <div class="note js-note">
+            <div class="note__text">
+              <p>você é a melhor coisa que me aconteceu, obrigado por me escolher todos os dias.</p>
+              <p>Te amo muito! &hearts;.</p>
             </div>
+          </div>
         </div>
-       
-    </body> 
-</html>
+      </div>
+    </div>
+  </body>
+  
+  </html>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js'></script>
+        <script id="rendered-js" >
+  //Variables
+  let mobile_media_query = window.matchMedia("(max-width: 400px)");
+  let tablet_media_query = window.matchMedia(
+  "(min-width: 400px) and (max-width: 600px)");
+  
+  const notes = document.querySelectorAll(".js-note");
+  
+  //-> Function that resets the size of the notes.
+  function recize_notes() {
+    for (let i = 0; i < notes.length; i++) {if (window.CP.shouldStopExecution(0)) break;
+      if (notes[i].classList.contains("active")) {
+        notes[i].classList.remove("active");
+        gsap.set(notes[i], {
+          height: "30%",
+          clearProps: "all" });
+  
+      }
+    }window.CP.exitedLoop(0);
+  }
+  
+  //-> Main function that enables all the notes.
+  function notes_ready() {
+    gsap.to(".js-envelop-content", {
+      height: "110%",
+      duration: 0.5 });
+  
+  
+    for (let i = 0; i < notes.length; i++) {if (window.CP.shouldStopExecution(1)) break;
+      notes[i].addEventListener("click", function () {
+        if (mobile_media_query.matches) {
+          if (this.classList.contains("active")) {
+            this.classList.remove("active");
+            gsap.set(this, {
+              height: "30%",
+              clearProps: "all" });
+  
+          } else {
+            for (let i = 0; i < notes.length; i++) {if (window.CP.shouldStopExecution(2)) break;
+              if (notes[i].classList.contains("active")) {
+                notes[i].classList.remove("active");
+                gsap.set(notes[i], {
+                  height: "30%",
+                  clearProps: "all" });
+  
+              }
+            }window.CP.exitedLoop(2);
+            this.classList.add("active");
+            gsap.set(this, {
+              height: 125 + 40 * i + "%" });
+  
+          }
+        } else if (tablet_media_query.matches) {
+          if (this.classList.contains("active")) {
+            this.classList.remove("active");
+            gsap.set(this, {
+              height: "30%",
+              clearProps: "all" });
+  
+          } else {
+            for (let i = 0; i < notes.length; i++) {if (window.CP.shouldStopExecution(3)) break;
+              if (notes[i].classList.contains("active")) {
+                notes[i].classList.remove("active");
+                gsap.set(notes[i], {
+                  height: "30%",
+                  clearProps: "all" });
+  
+              }
+            }window.CP.exitedLoop(3);
+            this.classList.add("active");
+            gsap.set(this, {
+              height: 80 + 21 * i + "%" });
+  
+          }
+        } else {
+          if (this.classList.contains("active")) {
+            this.classList.remove("active");
+            gsap.set(this, {
+              height: "30%",
+              clearProps: "all" });
+  
+          } else {
+            for (let i = 0; i < notes.length; i++) {if (window.CP.shouldStopExecution(4)) break;
+              if (notes[i].classList.contains("active")) {
+                notes[i].classList.remove("active");
+                gsap.set(notes[i], {
+                  height: "30%",
+                  clearProps: "all" });
+  
+              }
+            }window.CP.exitedLoop(4);
+            this.classList.add("active");
+            gsap.set(this, {
+              height: 70 + 20 * i + "%" });
+  
+          }
+        }
+      });
+    }window.CP.exitedLoop(1);
+  }
+  
+  //-> Function that set up the up paper of the envelope.
+  function set_up_paper() {
+    var arr = [0, 0, 100, 0, 50, 61];
+    gsap.set(".js-up-paper", {
+      bottom: "97%",
+      rotation: 180,
+      zIndex: 200,
+      clipPath:
+      "polygon(" +
+      arr[0] +
+      "%" +
+      arr[1] +
+      "%," +
+      arr[2] +
+      "%" +
+      arr[3] +
+      "%," +
+      arr[4] +
+      "%" +
+      arr[5] +
+      "%)",
+      onComplete: notes_ready });
+  
+  }
+  
+  //-> Function that starts the up paper transition.
+  function envelop_transition() {
+    gsap.to(".js-up-paper", {
+      bottom: "1%",
+      duration: 0.25,
+      onComplete: set_up_paper });
+  
+    document.
+    querySelector(".js-up-paper").
+    removeEventListener("click", envelop_transition);
+    document.querySelector(".js-up-paper").classList.remove("cursor");
+  }
+  
+  //-> Function that allows cut the sticker.
+  function sticker() {
+    gsap.set(".js-sticker", { width: "20%", left: "-80%" });
+    document.body.classList.remove("scissors");
+    document.querySelector(".js-sticker").removeEventListener("click", sticker);
+    document.
+    querySelector(".js-up-paper").
+    addEventListener("click", envelop_transition);
+    document.querySelector(".js-up-paper").classList.add("cursor");
+  }
+  
+  document.querySelector(".js-sticker").addEventListener("click", sticker);
+  
+  window.onresize = function (event) {
+    recize_notes();
+  };
