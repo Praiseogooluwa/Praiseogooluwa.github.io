@@ -1,35 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="stylesheet" href="./styles.css">
-        
-    </head> 
-    <body>
-        <div class="container">
-            <div >
-                <h1 class = "header_text">WILL YOU BE MY GIRLFRIEND OREOLUWA?</h1>
-                <h1 class = "header_text">DO YOU ACCEPT?</h1>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
+
+
+</head>
+
+<body>
+    <header class="header">
+        <a href="#" class="logo">PORTFOLIO</a>
+
+        <nav class="navbar">
+            <a href="#home" style="--i:1;" class="active">Home</a>
+            <a href="#about" style="--i:2;">About</a>
+            <a href="#services" style="--i:3;">Services</a>
+            <a href="#skills" style="--i:4;">Skills</a>
+            <a href="#project" style="--i:4;">Project</a>
+            <a href="#contact" style="--i:5;">contact</a>
+
+        </nav>
+    </header>
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3>Hello, It's Me</h3>
+            <h1>Praise Ogooluwa</h1>
+            <h3>And I'm a <span class="text"> </span></h3>
+            <p>Detail-oriented and highly motivated Junior Data Scientist with a strong foundation in data analysis.
+                <br>expertise is to transform data into actionable insights and training models that enables an AI system to function....
+            </p>
+            <div class="home-sci">
+                <a href="https://www.facebook.com/Oshin2104?mibextid=ZbWKwL" style="--i:7;"><i class='bx bxl-facebook'></i></a>
+                <a href="https://wa.me/message/QHJGXMYYBNVUJ1" style="--i:8;"><i class='bx bxl-whatsapp'></i></a>
+                <a href="https://github.com/Praiseogooluwa" style="--i:9;"><i class='bx bxl-github'></i></a>
+                <a href="www.linkedin.com/in/praise-ogooluwa" style="--i:10;"><i class='bx bxl-linkedin'></i></a>
+
             </div>
-            <div class="gif_container">
-                <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDdtZ2JiZDR0a3lvMWF4OG8yc3p6Ymdvd3g2d245amdveDhyYmx6eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cLS1cfxvGOPVpf9g3y/giphy.gif" alt="Cute animated illustration">
+            <a href="https://drive.google.com/file/d/1UC7KqN7qzSIdQCligxGr6JC58QSy9ixS/view?usp=sharing" class="btn-box">Download Resume</a>
+
+        </div>
+        </div>
+
+
+
+        </div>
+        <span class="home-imgHover"></span>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="Praise.png">
+        </div>
+
+        <div class="about-text">
+            <h2>About <span>Me</span></h2>
+            <h4>Data Scientist!</h4>
+            <p>I'm a dedicated Data Scientist with a passion for transforming complex data into actionable insights. Holding a Diploma in Data Science from GOMYCODE, I have 3 months of internship experience. My expertise lies in data analysis, machine learning, data visualization, and big data technologies. I am proficient in tools and languages such as Python, SQL, Excel, Matplotlib, Seaborn, Tableau. My approach to problem-solving is meticulous and analytical, ensuring every decision is backed by thorough data analysis. I am committed to continuous learning and staying updated with the latest advancements in data science. Throughout my studies, I have worked on impactful projects that demonstrate my ability to deliver data-driven solutions. I am always eager to connect with fellow data enthusiasts and potential collaborators...</p>
+
+            <a href="https://github.com/Praiseogooluwa" class="btn-box">More About Me</a>
+
+        </div>
+    </section>
+
+
+    <section>
+        <div class="services" id="services">
+            <div class="container">
+                <h1 class="sub-title">My <span>Services</span></h1>
+                <div class="services-list">
+                    <div>
+                        <i class='bx bx-code-alt' style='color:#00eeff'></i>
+                        <h2>Data Analysis and Insights</h2>
+                        <p>I transform raw data into actionable insights, enabling businesses to make informed, strategic decisions. By cleaning, organizing, and analyzing data, I uncover trends, patterns, and key metrics that drive growth and efficiency...</p>
+                        <a href="#" class="read">learn more</a>
+                    </div>
+                    <div>
+                        <i class='bx bx-crop' style='color:#00eeff'></i>
+                        <h2>Predictive Modeling(ML)</h2>
+                        <p>I build and deploy machine learning models to predict future trends and outcomes. By analyzing historical data, these models provide forecasts that help businesses anticipate changes, optimize operations, and make proactive decisions...</p>
+                        <a href="#" class="read">learn more</a>
+                    </div>
+                    <div>
+                        <i class='bx bxl-visual-studio' style='color:#00eeff'></i>
+                        <h2>Data Visualization</h2>
+                        <p>I create compelling visualizations to effectively communicate data findings. Using tools like Tableau, Matplotlib, and Seaborn, I transform complex data sets into easy-to-understand charts, graphs, and dashboards, enabling stakeholders to quickly grasp key insights and make informed decisions...</p>
+                        <a href="#" class="read">learn more</a>
+                    </div>
+                </div>
             </div>
-            <div class = "buttons">
-                <button class="btn" id = "yesButton" onclick="nextPage()">Yes</button>
-                <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">No</button>
-                <script>
-                    function nextPage() {
-                        window.location.href = "yes.html";
-                    }
-                    
-                    function moveButton() {
-                        var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth) - 85;
-                        var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight) - 48;
-                        document.getElementById('noButton').style.left = `${x}px`;
-                        document.getElementById('noButton').style.top = `${y}px`;
-                    }
-                </script> 
+    </section>
+
+
+    <h1 class="sub-title">My <span>Skills</span></h1>
+
+    <section>
+
+        <div class="container1" id="skills">
+
+
+            <h1 class="heading1">Technical Skills</h1>
+            <div class="Technical-bars">
+                <div class="bar"><i style="color:#c95d2e" class="bx bxl-python"></i>
+                    <div class="info">
+                        <span>Python</span>
+                    </div>
+                    <div class="progress-line html">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="bar"><i style="color:#147bbc" class="bx bx-bar-chart-alt"></i>
+                    <div class="info">
+                        <span>PowerBI</span>
+                    </div>
+                    <div class="progress-line css">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="bar"><i style="color:#b0bc1e" class="bx bx-code-alt"></i>
+                    <div class="info">
+                        <span>SQL</span>
+                    </div>
+                    <div class="progress-line javascript">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="bar"><i style="color:#c32ec9" class='bx bx-scatter-chart'></i>
+                    <div class="info">
+                        <span>Tableau</span>
+                    </div>
+                    <div class="progress-line python">
+                        <span></span>
+                    </div>
+                </div>
+                
+                </div>
             </div>
         </div>
-       
-    </body> 
+
+
+        <div class="container1">
+            <h1 class="heading1">Professional Skills</h1>
+            <div class="radial-bars">
+
+                <div class="radial-bar">
+                    <svg x="0px" y="0px" viewBox="0 0 200 200">
+                        <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                        <circle class="path path-1" cx="100" cy="100" r="80"></circle>
+                    </svg>
+                    <div class="percentage">90%</div>
+                    <div class="text">Creativity</div>
+                </div>
+
+                <div class="radial-bar">
+                    <svg x="0px" y="0px" viewBox="0 0 200 200">
+                        <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                        <circle class="path path-2" cx="100" cy="100" r="80"></circle>
+                    </svg>
+                    <div class="percentage">80%</div>
+                    <div class="text">Communication</div>
+                </div>
+
+                <div class="radial-bar">
+                    <svg x="0px" y="0px" viewBox="0 0 200 200">
+                        <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                        <circle class="path path-3" cx="100" cy="100" r="80"></circle>
+                    </svg>
+                    <div class="percentage">75%</div>
+                    <div class="text">Problem Solving</div>
+                </div>
+
+                <div class="radial-bar">
+                    <svg x="0px" y="0px" viewBox="0 0 200 200">
+                        <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                        <circle class="path path-4" cx="100" cy="100" r="80"></circle>
+                    </svg>
+                    <div class="percentage">85%</div>
+                    <div class="text">Teamwork</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section>
+        <div id="portfolio" id="project">
+            <div class="main-text" id="project">
+
+                <h2>Latest<span>Project</span></h2>
+
+                <div class="portfolio-content">
+                    <div class="row">
+                        <img src="Image.PNG">
+                        <div class="layer">
+                            <h5>Traffic recognition</h5>
+                            <p>A deep neural network model that can classify traffic signs present in the image into different categories. With this model, we are able to read and understand traffic signs which are a very important task for all autonomous vehicles...</p>
+                            <a href="https://github.com/Praiseogooluwa/Traffic_Reg"><i class='bx bx-link-external' style='color:#ffffff'></i></a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <img src="PowerBI_report.png">
+                        <div class="layer">
+                            <h5>Sentimental Analysis</h5>
+                            <p>This folder contain Sentiment Analysis Projects of the 2023 Presidential Elections in Nigeria and Random tweets of Nigerian at a moment in time(December 2022) to be specific, both project dataset were scrapped from twitter the popular social media platform....</p>
+                            <a href="https://github.com/Praiseogooluwa/Sentimental_Analysis"><i class='bx bx-link-external' style='color:#ffffff'></i></a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <img src="image 3.PNG">
+                        <div class="layer">
+                            <h5>Energy Consumption Profiling</h5>
+                            <p>This Repo contains a energy consuption report generated from 5G-energy-consumption-dataset sourced from kaggle and now converted to an html file using y-data profiling....</p>
+                            <a href="https://github.com/Praiseogooluwa/PYTHON_PROJECT"><i class='bx bx-link-external' style='color:#ffffff'></i></a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="contact-text">
+            <h2>Contact <span>Me</span></h2>
+            <h4>Let's Work Together</h4>
+            <p>I'm always open to connecting with fellow data enthusiasts and potential collaborators. Feel free to reach out to me via:</p>
+            <div class="contact-list">
+                <li><i class='bx bxs-send'></i> praiseogooluwa118@gmail.com</a></li>
+                <li><i class='bx bx-phone-call'></i> +2347048116542</a></li>
+            </div>
+            <div class="contact-icons">
+                <a href="https://www.facebook.com/Oshin2104?mibextid=ZbWKwL"><i class='bx bxl-facebook-circle'></i></a>
+                <a href="https://github.com/Praiseogooluwa"><i class='bx bxl-github'></i></a>
+                <a href="https://wa.me/message/QHJGXMYYBNVUJ1"><i class='bx bxl-whatsapp'></i></a>
+                <a href="www.linkedin.com/in/praise-ogooluwa"><i class='bx bxl-linkedin'></i></a>
+
+            </div>
+        </div>
+        <div class="contact-form">
+            <form action="">
+                <input type="" placeholder="Enter Your Name" required>
+                <input type="email" placeholder="Enter Your Email" required>
+
+                <input type="" placeholder="Enter Your Subject">
+                <textarea name="" id="" cols="40" rows="10" placeholder="Enter Your Message" required></textarea>
+                <input type="submit" value="Submit" class="send">
+
+
+            </form>
+        </div>
+    </section>
+
+    <div class="last-text">
+        <p>Developed with love by Praise Ogooluwa © 2024 </p>
+    </div>
+
+    <a href="#" class="top"><i class='bx bx-up-arrow-alt'></i></a>
+
+
+
+    <script src="sript.js"></script>
+
+</body>
+
 </html>
