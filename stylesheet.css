@@ -967,7 +967,7 @@ form textarea{
         animation: slideTop 1s ease forwards;
         animation-delay: 2s;
         box-shadow: 0 0 5px #0ef, 0 0 25px #0ef;
-        /*text-align: center; /* Ensure text is centered inside the button */
+        /*text-align: center; /* Ensure text is centered inside the b
     }
     .btn-box1:hover {
         box-shadow: 0 0 5px cyan,
