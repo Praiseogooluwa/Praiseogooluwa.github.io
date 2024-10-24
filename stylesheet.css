@@ -19,7 +19,7 @@ body
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 10%;
+    padding: 20px 5%;
     background: #051129;
     display: flex;
     justify-content: space-between;
@@ -38,18 +38,40 @@ body
    
 
 }
-
 .navbar a {
     display: inline-block;
-    font-size: 25px;
+    font-size: 20px;
     color: #fff;
     text-decoration: none;
     font-weight: 500;
-    margin-left: 35px;
+    margin-left: 20px;
     transition: .3s;
     opacity: 0;
     animation: slideTop .5s ease forwards;
     animation-delay: calc(.2s * var(--i));
+}
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 5%;
+    }
+    .navbar a {
+        font-size: 18px;
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .navbar a {
+        font-size: 16px;
+        margin-left: 0;
+    }
 }
 .navbar a:hover {
     color: #0ef;
@@ -63,7 +85,7 @@ body
     background-position: center;
     display: flex;
     align-items: center;
-    padding: 70px 10% 0;
+    padding: 70px 5% 0;
 }
 
 .home-content {
@@ -89,7 +111,7 @@ body
 }
 
 .home-content h1 {
-    font-size: 56px;
+    font-size: 36px;
     font-weight: 700;
     margin: -3px 0;
     opacity: 0;
@@ -98,12 +120,28 @@ body
 }
 
 .home-content p {
-    font-size: 20px;
+    font-size: 18px;
     opacity: 0;
     animation: slideLeft 1s ease forwards;
     animation-delay: 1s;
 }
+@media (max-width: 768px) {
+    .home-content h1 {
+        font-size: 32px;
+    }
+    .home-content p {
+        font-size: 16px;
+    }
+}
 
+@media (max-width: 480px) {
+    .home-content h1 {
+        font-size: 28px;
+    }
+    .home-content p {
+        font-size: 14px;
+    }
+}
 .home-sci a {
     display: inline-flex;
     justify-content: center;
@@ -131,10 +169,10 @@ body
 
 .btn-box {
     display: inline-block;
-    padding: 12px 28px;
+    padding: 10px 20px;
     background: #0ef;
     border-radius: 40px;
-    font-size: 16px;
+    font-size: 14px;
     color: #081b29;
     letter-spacing: 1px;
     text-decoration: none;
@@ -152,10 +190,10 @@ body
 }
 .btn-box1 {
     display: inline-block;
-    padding: 12px 28px;
+    padding: 10px 20px;
     background: #0ef;
     border-radius: 40px;
-    font-size: 16px;
+    font-size: 14px;
     color: #081b29;
     letter-spacing: 1px;
     text-decoration: none;
@@ -175,9 +213,30 @@ body
 
 .about{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     align-items: center;
     gap: 1.5rem;
+}
+@media (min-width: 768px) {
+    .about {
+        grid-template-columns: repeat(2, 1fr); /* Two columns for larger screens */
+    }
+}
+.services-list {
+    grid-template-columns: 1fr; /* Single column for smaller screens */
+}
+@media (min-width: 768px) {
+    .services-list {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Multiple columns for larger screens */
+    }
+}
+@media (max-width: 768px) {
+    .about {
+        grid-template-columns: 1fr;
+    }
+    .services-list {
+        grid-template-columns: 1fr;
+    }
 }
 .about-img img{
     padding-bottom: 20%;
@@ -187,8 +246,19 @@ body
     border-radius: 8px;
 }
 .about-text h1{
-    font-size: 60px;
+    font-size: 40px;
     
+}
+@media (max-width: 768px) {
+    .about-text h1 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-text h1 {
+        font-size: 28px;
+    }
 }
 .about-text h1 span{
 
@@ -225,8 +295,6 @@ body
     
     
 }
-
-
 .container {
     padding: 90px;
 }
@@ -266,10 +334,10 @@ body
 }
 .read {
     display: inline-block;
-    padding: 12px 28px;
+    padding: 10px 20px;
     background: #0ef;
     border-radius: 40px;
-    font-size: 16px;
+    font-size: 14px;
     color: #081b29;
     letter-spacing: 1px;
     text-decoration: none;
@@ -279,6 +347,12 @@ body
     animation-delay: 2s;
     box-shadow: 0 0 5px #0ef,
     0 0 25px #0ef;
+}
+@media (max-width: 768px) {
+    .btn-box, .btn-box1, .read {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
 }
 .read:hover {
     box-shadow: 0 0 5px cyan,
@@ -291,11 +365,6 @@ body
    
     transform: translateY(-10px);
 }
-
-
-
-
-
 section{
     display: flex;
     flex-wrap: wrap;
@@ -423,7 +492,6 @@ section{
         opacity: 1;
     }
 }
-
 .radial-bars{
     width: 100%;
     display: flex;
@@ -433,10 +501,15 @@ section{
    
 }
 .radial-bars .radial-bar{
-    width: 50%;
-    height: 170px;
+    width: 100%;
+    height: 150px;
     margin-bottom: 10px;
     position: relative;
+}
+@media (min-width: 768px) {
+    .radial-bars .radial-bar {
+        width: 45%; /* Use two columns for larger screens */
+    }
 }
 .radial-bars .radial-bar svg{
     position: absolute;
@@ -518,15 +591,6 @@ section{
     animation: showText 0.5s 1s linear forwards;
     opacity: 0;
 }
-
-
-
-
-
-
-
-
-
 .main-text{
     padding-top: 130px;
     margin-top: 200px;
@@ -609,12 +673,6 @@ section{
 .row:hover .layer{
     height: 100%;
 }
-
-
-
-
-
-
 .contact{
 
     display: grid;
@@ -689,8 +747,6 @@ section{
     animation: slideLeft 1s ease forwards ;
     animation-delay: calc(.2s * var(--i));
 }
-
-
 .contact-icons i:hover{
     background: #0ef;
     color: #081b29;
@@ -804,250 +860,49 @@ form textarea{
         width: 0;
     }
 }
-@media (max-width: 1024px) {
-    .home-content h1 {
-        font-size: 48px;
-    }
-    .home-content p {
-        font-size: 18px;
-    }
-    .about-text h2 {
-        font-size: 48px;
-    }
-    .about-text h4 {
-        font-size: 24px;
-    }
-    .about-text p {
-        font-size: 18px;
-    }
-    .container {
-        padding: 45px;
-    }
-    .services-list div h2 {
-        font-size: 26px;
-    }
-}
-@media (max-width: 991px) {
-.home {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background: url('praise_1.png') no-repeat;
-    background-size: cover;
-    background-position: 60%;
+/* Base Navigation Styles */
+.navbar {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding: 100px 50% 5;
+    padding: 20px;
 }
-.home-content {
-    max-width: 350px;
-    margin-left: -40px
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    margin-left: 30px;
 }
+
+/* Responsive Navigation */
+@media (max-width: 767px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 5%;
+    }
+
+    .navbar a {
+        font-size: 18px;
+        margin: 10px 0;
+    }
+}
+/* Base Text Styles */
 .home-content h1 {
-    font-size: 35px;
+    font-size: 48px;
 }
 .home-content p {
     font-size: 18px;
 }
-.home-sci a {
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #081b29;
+    color: white;
+    margin: 0;
+    padding: 0;
 }
-}
-.about {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
-    gap: 1.5rem;
 
-    .about-text h1 {
-        font-size: 40px;
-    }
-    .about-text h2 {
-        font-size: 22px;
-    }
-    .about-text p {
-        font-size: 16px;
-    }
-    .container {
-        padding: 30px;
-    }
-    .services-list div h2 {
-        font-size: 24px;
-    }
-}
-@media (max-width: 480px) {
-    .header {
-        padding: 20px 3%;
-    }
-    .navbar a {
-        font-size: 20px;
-        margin-left: 15px;
-    }
-    .home {
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        background: url('praise_1.png') no-repeat;
-        background-size: cover;
-        background-position: 57%;
-        display: flex;
-        align-items: center;
-        padding: 100px 50% 5;
-    }
-    .home-content {
-        max-width: 250px;
-        margin-left: -30px
-    }
-    .home-content h1 {
-        font-size: 35px;
-    }
-    .home-content p {
-        font-size: 18px;
-    }
-    .home-sci a {
-        width: 30px;
-        height: 30px;
-        font-size: 18px;
-    }
-    .btn-box {
-        font-size: 14px;
-        padding: 10px 20px;
-    }
-    .about{
-        display: flex;
-    }
-    .about-img img{
-        padding-bottom: 0;
-        max-width: 1500px;
-        height: auto;
-        width: 100%;
-        
-    }
-    .about-text h1 {
-        font-size: 80px; /* Increased font size */
-        text-align: center;
-        padding-top: 70px;
-    }
-    .about-text h1 span{
-    
-        color: #0ef;    
-    }
-    .about-text h2 {
-        font-size: 30px; /* Increased font size */
-        font-weight: 700px;
-        color: #fff;
-        line-height: 1.7;
-        margin: 15px 0 30px;
-        text-align: center; /* Center the text */
-    }
-    .about-text p {
-        color: aliceblue;
-        font-size: 35px; /* Increased font size */
-        line-height: 1.6; /* Adjusted line height for better readability */
-        margin-top: -2rem; /* Move the text up */
-        margin-bottom: 4rem;
-        text-align: center; /* Center the text */
-    }
-   
-    .btn-box1 {
-        margin: 9em;
-        margin-top: -2rem;
-        display: inline-block;
-        padding: 12px 28px;
-        background: #0ef;
-        border-radius: 40px;
-        font-size: 16px; /* Increased font size for better readability */
-        color: #081b29;
-        letter-spacing: 1px;
-        text-decoration: none;
-        font-weight: 600;
-        opacity: 0;
-        animation: slideTop 1s ease forwards;
-        animation-delay: 2s;
-        box-shadow: 0 0 5px #0ef, 0 0 25px #0ef;
-        /
-    }
-    .btn-box1:hover {
-        box-shadow: 0 0 5px cyan,
-        0 0 25px cyan, 0 0 50px cyan,
-        0 0 100px cyan, 0 0 200px cyan;
-    }
-    #services{
-        padding: 80px 0;
-        padding-bottom: -50%;
-        margin-top: -5rem;
-        
-    }
-    .sub-title {
-        text-align: center;
-        font-size: 70px;
-        padding-bottom: 70px;
-    }
-    .container {
-        padding: -30px;
-    }
-    .services-list div{
-        background-color: transparent;
-        padding: 40px;
-        font-size: 20px;
-        font-weight: 20px;
-        border-right: 5px;
-        border-radius: 10px;
-    }
-    .services-list div a{
-        text-decoration: none;
-        color: #000000;
-        font-size: 15px;
-        margin-top: 20px;
-        display: inline-block;
-    }
-    .container1{
-        width: 900px;
-        height: 700px;
-        padding: 75px 90px;
-        margin-left: 10px;
-    }
-    .heading1{
-        margin-top: -5rem;
-        text-align: center;
-        text-decoration: underline;
-        text-underline-offset: 10px;
-        text-decoration-thickness: 5px;
-        margin-bottom: 50px;
-    }
-    .bar{
-        font-size: 40px;
-    }
-    .Technical-bars .bar .info span{
-        font-size: 20px;
-        font-weight: 500;
-        animation: showText 0.5s 1s linear forwards;   
-        opacity: 0;
-    }
-    .progress-line span::after{
-        font-size: 18px;
-    }
-    .main-text h2{
-        margin-top: -20rem;
-        font-size: 60px;
-        line-height: 1;
-        text-align: center;
-    }
-    .contact-text h2{
-        font-size: 45px;
-        line-height: 1;
-        text-align: center;
-        margin-right: 0px;
-    }
-    .contact{
-        display: flex;
-        
-        align-items: center;
-        
-        padding-left: 30px;
-        margin-top: 130px;
-    }
 
-}
+
